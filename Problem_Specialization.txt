@@ -1,0 +1,24 @@
+# Problem Specialization
+
+# Specialized Problem
+This Agent is specialized for:
+Deterministic, Structured AI-Native Code Review Workflows
+
+## Why This Problem?
+Modern AI tools act as assistants. However, engineering teams require:
+Deterministic output, Structured reasoning, Repeatable evaluation, Security classification, Automated test generation
+
+Default AI assistants are conversational.
+Engineering workflows require orchestration.
+
+## Why This Was 1 Priority
+1)Code quality impacts production safety.
+2)Security vulnerabilities are costly.
+3)Test generation improves reliability.
+4)Deterministic output enables automation.
+5)AI-native workflows are the future of development.
+
+This problem directly aligns with:
+AI as the primary execution layer.
+Instead of reviewing code manually,
+we designed a system that enforces structured multi-agent reasoning inside Cursor.

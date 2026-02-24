@@ -1,0 +1,69 @@
+# Benchmark Comparison
+
+We compared our Agent against default Cursor Claude across 3 structured test cases.
+
+
+## Test Case 1: Logic Bug
+
+def calculate_discount(price, percent):
+    return price - price * percent
+
+Expected Issue:
+
+Percent not divided by 100
+
+Metric	              Default            Claude	           This Agent
+Bug                   Detection	            ✅	                 ✅
+Structured            Output	            ❌	                 ✅
+Severity              Classification	    ❌	                 ✅
+Test                  Generation	     ⚠ Partial	              ✅
+
+
+
+## Test Case 2: Security Risk
+
+def login(password):
+    if password == "admin123":
+        return True
+
+Expected Issue:
+
+Hardcoded credential
+
+Metric	              Default            Claude	           This Agent
+Detect             Hardcoded Secret       ✅	                 ✅
+Severity             Rating	              ❌	                 ✅
+Structured            JSON	              ❌	                 ✅
+
+
+## Test Case 3: Performance Issue
+def find_duplicates(lst):
+    duplicates = []
+    for i in lst:
+        if lst.count(i) > 1:
+            duplicates.append(i)
+    return duplicates
+
+Expected Issue:
+
+O(n²) inefficiency
+
+Metric	              Default            Claude	           This Agent
+Detect                Inefficiency	      ✅	              ✅
+Categorize            Performance Issue   ❌	              ✅
+Provide               Refactor Suggestion  ⚠	           ✅
+
+
+## Overall Benchmark Results
+Category	             Default               Claude	               This Agent
+Structured               Output	                 ❌                     	✅
+Multi-Agent              Reasoning	             ❌                   	✅
+Deterministic            Workflow	             ❌                  	✅
+Severity                 Classification	         ❌                  	✅
+Automatic                Test Generation	     ⚠                       ✅
+Conversational           Depth	                 ✅	                     ⚠ (Structured Focus)
+
+Conclusion:
+
+Default Claude excels in conversational explanation.
+This Agent excels in structured, deterministic workflow enforcement.
